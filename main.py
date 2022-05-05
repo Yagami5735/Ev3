@@ -8,28 +8,29 @@ from pybricks.tools import wait, StopWatch, DataLog
 from pybricks.robotics import DriveBase
 from pybricks.media.ev3dev import SoundFile, ImageFile
 
-# Initialize the EV3 brick.
+#Seta o EV3Brick
 ev3 = EV3Brick()
 
-# Initialize a motor at port B.
+#Seta a porta B para o motor
 motor = Motor(Port.B)
-# Play a sound.
 
-sensor = ColorSensor(Port.S1)
+#Seta a porta 1 para o sensor de cor
+sensor = ColorSensor(Port.S1) 
 
+#Seta a porta 2 para o sensor ultrasonico
 eyes = UltrasonicSensor(Port.S2)
 
 while True:
     
-    a = sensor.color()
-    b = sensor.reflection()
-    c = eyes.distance()
+    a = sensor.color()      #Le o que está sendo detectado no sensor de cor
+    b = sensor.reflection() #Le o que está sendo detectado no sensor de refletancia
+    c = eyes.distance()     #Le o que está sendo detectado no sensor ultrasonico
     print(a)
     print(b)
     print(c)
     if (b >= 60):
         
-        motor.run(1000)
+        motor.run(1000) #motor anda com toda a potencia
         #b = ev3brick.buttons()
         #if Button.LEFT in b:
         #    ev3.speaker.beep()
@@ -51,8 +52,6 @@ while True:
     else:
 
         
-        motor.run(0)
+        motor.run(0) #motor para de rodar
 
-        
-# Play another beep sound.
         
