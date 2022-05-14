@@ -14,17 +14,19 @@ ev3 = EV3Brick()
 
 # Initialize a motor at port B.
 motor = Motor(Port.B)
-# Play a sound.
 
+# Initialize a color sensor at port S1.
 sensor = ColorSensor(Port.S1)
 
+# Initialize a ultrasonic sensor at port S2.
 eyes = UltrasonicSensor(Port.S2)
 
+# Initialize a gyroscopic sensor at oort S3.
 gyro = GyroSensor(Port.S3)
 
 while True:
     
-    a = sensor.color()
+    a = sensor.color()          
     b = sensor.reflection()
     c = gyro.angle()
     d = eyes.distance()
@@ -33,8 +35,8 @@ while True:
     print(c)
     if (b <= 40 and b != 0):
         
-        motor.run(1000)
-        if(c >= 10):
+        motor.run(1000)           # start motor in full power
+        if(c >= 10):              # analyse the gyro sensor  
             motor.reset_angle(0)
             motor.dc(c + 30)
         #b = ev3brick.buttons()
