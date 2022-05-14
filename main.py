@@ -49,7 +49,7 @@ while True:
         #    ev3.speaker.beep(1000, 500)
         #    motor.run(-1000)
         #    wait(2000)
-        #    motor.run(0)
+        #    motor.run(0)a
         
 
     else:
