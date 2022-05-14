@@ -57,7 +57,7 @@ while True:
     else:
 
 
-        motor.run(0)
+        motor.run(0)              # turn off the motor
 
 
         
