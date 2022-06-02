@@ -20,7 +20,7 @@ motorL = Motor(Port.D)
 eyes = UltrasonicSensor(Port.S1)
 
 
-#Function creations 
+#Function creation 
 def motorStop():
     motorR.run(0)
     motorL.run(0)
