@@ -103,6 +103,3 @@ while True:
             motorStop()
             search = False
             
-
-    
-    
