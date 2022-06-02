@@ -9,16 +9,18 @@ from pybricks.robotics import DriveBase
 from pybricks.media.ev3dev import SoundFile, ImageFile
 
 
-
+#initialize the ev3 brick
 ev3 = EV3Brick()
-
+ 
+#initialize the motors at port A and D
 motorR = Motor(Port.A)
 motorL = Motor(Port.D)
 
+#initialize a ultrasonic sensor at port 1
 eyes = UltrasonicSensor(Port.S1)
 
 
-
+#Function creations 
 def motorStop():
     motorR.run(0)
     motorL.run(0)
@@ -54,7 +56,9 @@ def motorSpin():
 search = False
 
 while True:
+    #check ultrassonic sensor distance
     a = eyes.distance()
+    #the principal while
     while search == False:
         
         b = ev3brick.buttons()
@@ -84,7 +88,8 @@ while True:
     
         elif Button.CENTER in b:
             search = True
-
+          
+    #No colision
     while search == True:
         a = eyes.distance()
         print(a)
