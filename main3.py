@@ -27,7 +27,7 @@ search = False
 while True:
     #check ultrassonic sensor distance
     a = eyes.distance()
-    #the principal while
+    #sumo
     while search == False:
         a = eyes.distance()
         b = ev3brick.buttons()
